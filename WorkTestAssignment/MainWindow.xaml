@@ -7,16 +7,21 @@
         xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
         xmlns:local="clr-namespace:WorkTestAssignment"
         mc:Ignorable="d"
-        Title="Test Exercise" Height="400" Width="280" Initialized="Window_Initialized" ResizeMode="NoResize">
+        Title="Test Exercise" Height="500" Width="340" Initialized="Window_Initialized" ResizeMode="NoResize">
     <Grid Margin="0,0,0,4">
-        <TextBox x:Name="TB_FIO" MaxLength ="250" HorizontalAlignment="Left" Margin="20,54,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="235" Height="19"/>
-        <Label Content="ФИО" HorizontalAlignment="Left" Margin="20,22,0,0" VerticalAlignment="Top" Height="26" Width="51"/>
-        <xctk:MaskedTextBox x:Name="MTB_Phone" Mask="+7(000)000-00-00" HorizontalAlignment="Left" Margin="20,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Height="19"/>
-        <Label Content="Телефон" HorizontalAlignment="Left" Margin="20,81,0,0" VerticalAlignment="Top" Height="27" Width="79"/>
-        <xctk:MaskedTextBox x:Name="MTB_Passport" Mask="0000 000000" HorizontalAlignment="Left" Margin="20,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Height="19"/>
-        <Label Content="Паспорт (Серия и номер)" HorizontalAlignment="Left" Margin="20,142,0,0" VerticalAlignment="Top" Height="27" Width="185"/>
-        <Button Content="Открыть файл" HorizontalAlignment="Left" Margin="19,249,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
-        <Button Content="Сохранить запись" HorizontalAlignment="Left" Margin="19,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.151,0.002" Width="118" Click="Button_Click_1"/>
-        <Button Content="Очистить файл" HorizontalAlignment="Left" Margin="19,289,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_2"/>
+        <TextBox x:Name="TB_FIO" MaxLength ="250" HorizontalAlignment="Left" Margin="20,49,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="263" Height="27" PreviewTextInput="TB_FIO_PreviewTextInput" TextChanged="TB_FIO_TextChanged" LostFocus="TB_FIO_LostFocus" FontSize="18" />
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="20,13,0,0" VerticalAlignment="Top" Height="31" Width="55" RenderTransformOrigin="0.392,0.463" FontSize="18"/>
+        <xctk:MaskedTextBox x:Name="MTB_Phone" Mask="(000)000-00-00" HorizontalAlignment="Left" Margin="84,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Height="31" LostFocus="MTB_Phone_LostFocus" FontSize="18"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="17,92,0,0" VerticalAlignment="Top" Height="33" Width="101" FontSize="18"/>
+        <xctk:MaskedTextBox x:Name="MTB_Passport" Mask="0000 000000" HorizontalAlignment="Left" Margin="20,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" Height="28" LostFocus="MTB_Passport_LostFocus" FontSize="18"/>
+        <Label Content="Паспорт (Серия и номер)" HorizontalAlignment="Left" Margin="19,186,0,0" VerticalAlignment="Top" Height="32" Width="236" FontSize="18"/>
+        <Button Content="Открыть файл" HorizontalAlignment="Left" Margin="19,331,0,0" VerticalAlignment="Top" Width="156" Click="Button_Click" FontSize="18"/>
+        <Button Content="Сохранить запись" HorizontalAlignment="Left" Margin="19,285,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.151,0.002" Width="156" Click="Button_Click_1" Height="29" FontSize="18"/>
+        <Button Content="Очистить файл" HorizontalAlignment="Left" Margin="19,376,0,0" VerticalAlignment="Top" Width="156" Click="Button_Click_2" FontSize="18"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="16,126,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="TB_PhoneCode" HorizontalAlignment="Left" Margin="38,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" Height="31" Text="7" MaxLength="3" PreviewTextInput="TB_PhoneCode_PreviewTextInput" TextChanged="TB_PhoneCode_TextChanged" PreviewKeyDown="TB_PhoneCode_PreviewKeyDown" LostFocus="TB_PhoneCode_LostFocus" FontSize="18"/>
+        <Label x:Name="Label_ErrorPassport" Content="Label" HorizontalAlignment="Left" Margin="20,246,0,0" VerticalAlignment="Top" Width="236" Foreground="#FFF10606" Visibility="Hidden"/>
+        <Label x:Name="Label_ErrorPhone" Content="Label" HorizontalAlignment="Left" Margin="20,156,0,0" VerticalAlignment="Top" Width="235" Foreground="#FFFD0202" Visibility="Hidden"/>
+        <Label x:Name="Label_ErrorFIO" Content="Label" HorizontalAlignment="Left" Margin="19,74,0,0" VerticalAlignment="Top" Width="236" Foreground="#FFF3190F" Visibility="Hidden"/>
     </Grid>
 </Window>
